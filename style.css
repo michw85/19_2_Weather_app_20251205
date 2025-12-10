@@ -240,10 +240,9 @@ button:hover {
   width: 120px;
 }
 .dark-theme {
-  background: linear-gradient(135deg, #121212, #333333); /* Tumšs fons */
-  color: #e0e0e0; /* Gaišs teksts visam */
+  background: linear-gradient(135deg, #121212, #333333); 
 }
-/* peredelka items na dark themi */
+
 .dark-theme h1,
 .dark-theme label {
   color: #e0e0e0;
@@ -254,9 +253,9 @@ button:hover {
   color: #e0e0e0;
 }
 .dark-theme button {
-  background: #007bff; /* podgon kraski knopki */
+  background: #007bff; 
 }
 .dark-theme #weatherInfo {
-  background: rgba(255, 255, 255, 0.1); /* prozracnij na temnom fone */
+  background: rgba(255, 255, 255, 0.1); 
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 } */
