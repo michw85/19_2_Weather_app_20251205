@@ -1,73 +1,170 @@
-body {
-  font-family: Arial, sans-serif;
+/* Базовые стили для светлой темы (Bootstrap дополнение) */
+[data-bs-theme="light"] body {
   background: linear-gradient(135deg, #89cff0, #4682b4);
+  color: #333;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-h1 {
-  text-align: center;
+[data-bs-theme="dark"] body {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #f8f9fa;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.data-entry {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.city {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 12px;
-}
-label {
-  font-size: 16px;
-}
-
-input,
-select {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px;
-  background: #0984e3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #74b9ff;
-}
-
-.city button:hover {
-  background: #0c6bd6;
-}
-
-.weatherInfo {
-  margin-top: 40px;
-  background: rgba(255, 255, 255, 0.15);
+/* Стили для контейнеров */
+.container {
   padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  text-align: center;
-  backdrop-filter: blur(5px);
 }
 
-.weather-icon {
-  width: 120px;
+/* Стили для карточки с формой */
+.city {
+  max-width: 600px;
+  margin: 0 auto;
+  border: none !important;
+  backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="light"] .city {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .city {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для погодной информации */
+#weatherInfo {
+  max-width: 600px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+[data-bs-theme="light"] #weatherInfo {
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] #weatherInfo {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для кнопок */
+.btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  border: none;
+}
+
+[data-bs-theme="light"] .btn-primary {
+  background: linear-gradient(135deg, #0984e3, #74b9ff);
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.btn-secondary {
+  border: none;
+}
+
+[data-bs-theme="light"] .btn-secondary {
+  background: linear-gradient(135deg, #636e72, #b2bec3);
+}
+
+[data-bs-theme="dark"] .btn-secondary {
+  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+}
+
+/* Стили для формы */
+.form-control,
+.form-select {
+  border: none;
+  transition: all 0.3s ease;
+}
+
+[data-bs-theme="light"] .form-control,
+[data-bs-theme="light"] .form-select {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  color: #f8f9fa;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme="light"] .form-control:focus,
+[data-bs-theme="light"] .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 0.25rem rgba(137, 207, 240, 0.25);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+  /* background-color: rgba(255, 255, 255, 0.15); */
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+/* Стили для заголовков */
+h1 {
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для переключателя темы */
+.form-check-input:checked {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Анимация для плавного появления контента */
+#weatherInfo {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
